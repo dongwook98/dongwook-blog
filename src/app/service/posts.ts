@@ -1,5 +1,5 @@
 import path from 'path';
-import { promises as fs } from 'fs';
+import { readFile } from 'fs/promises';
 
 export type Post = {
   title: string;
@@ -10,12 +10,33 @@ export type Post = {
   featured: boolean;
 };
 
+export type PostData = Post & { content: string };
+
 export async function getAllPosts(): Promise<Post[]> {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
-  const data = await fs.readFile(filePath, 'utf-8');
-  return JSON.parse(data);
+  return readFile(filePath, 'utf-8') //
+    .then((data) => JSON.parse(data));
 }
 
 export async function getPinnedPosts(): Promise<Post[]> {
-  return getAllPosts().then((posts) => posts.filter((post) => post.featured));
+  return getAllPosts() //
+    .then((posts) => posts.filter((post) => post.featured));
+}
+
+export async function getNonPinnedPosts(): Promise<Post[]> {
+  return getAllPosts() //
+    .then((posts) => posts.filter((post) => !post.featured));
+}
+
+export async function getPostData(fileName: string): Promise<PostData> {
+  const filePath = path.join(process.cwd(), 'data', 'posts', `${fileName}.md`);
+  const metadata = await getAllPosts() //
+    .then((posts) => posts.find((post) => post.path === fileName));
+
+  if (!metadata) {
+    throw new Error(`${fileName}에 해당하는 포스트를 찾을 수 없음`);
+  }
+
+  const content = await readFile(filePath, 'utf-8');
+  return { ...metadata, content };
 }

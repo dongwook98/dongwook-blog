@@ -2,15 +2,23 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className='flex justify-between items-center p-4'>
+    <header className='flex justify-between items-center py-8 '>
       <Link href={'/'}>
-        <h1 className='text-3xl font-bold'>동욱의 블로그</h1>
+        <h1 className='text-3xl font-bold hover:text-accent'>동욱의 블로그</h1>
       </Link>
       <nav className='flex gap-4'>
-        <Link href={'/'}>home</Link>
-        <Link href={'/about'}>about</Link>
-        <Link href={'/posts'}>posts</Link>
-        <Link href={'/contact'}>contact</Link>
+        <Link className='hover:text-accent' href={'/'}>
+          home
+        </Link>
+        <Link className='hover:text-accent' href={'/about'}>
+          about
+        </Link>
+        <Link className='hover:text-accent' href={'/posts'}>
+          posts
+        </Link>
+        <Link className='hover:text-accent' href={'/contact'}>
+          contact
+        </Link>
       </nav>
     </header>
   );
