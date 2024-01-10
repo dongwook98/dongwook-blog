@@ -13,7 +13,7 @@ export default async function PostPage({ params: { slug } }: Props) {
   const { title, description, date, path, content } = await getPostData(slug);
 
   return (
-    <article className='rounded-2xl overflow-hidden bg-zinc-100 shadow-lg m-4'>
+    <article className='rounded-2xl overflow-hidden border shadow-lg my-4'>
       {/* <Image
         className='w-full h-1/6 max-h-[500px]'
         src={`/images/posts/${path}.png`}
@@ -21,7 +21,7 @@ export default async function PostPage({ params: { slug } }: Props) {
         width={760}
         height={420}
       /> */}
-      <section className='flex flex-col p-4'>
+      <section className='flex flex-col p-8'>
         <div className='flex items-center self-end text-accent'>
           <MdCalendarToday />
           <time className='font-semibold ml-1'>{date.toString()}</time>

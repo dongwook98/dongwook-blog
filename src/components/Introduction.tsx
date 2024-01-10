@@ -5,13 +5,17 @@ import MyImage from '/public/images/me.png';
 export default function Introduction() {
   return (
     <div className='flex justify-center items-center'>
-      <div className='flex flex-col items-center'>
+      <div className='flex flex-col items-center self-end'>
         <p className='text-xl mb-1'>저의 블로그에 오신걸 환영합니다.</p>
         <p className='text-xl mb-1'>프론트엔드 개발자입니다.</p>
-        <Link href={'/contact'} className='border-2 border-accent p-2'>
+        <Link
+          href={'/contact'}
+          className='bg-accent rounded-md p-2 text-white font-semibold hover:brightness-125'
+        >
           Contact
         </Link>
       </div>
+      <div></div>
       <Image src={MyImage} alt='나의 사진' width={200} />
     </div>
   );
