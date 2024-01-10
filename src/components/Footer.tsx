@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className='bg-gray-400 text-white py-1 text-sm text-center'>
-      <p>All rights reserved © Dongwook Kang 2024</p>
+    <footer className='py-4 text-gray-400 text-sm text-center border-t border-t-1'>
+      <p>ⓒ 2024. Dongwook Kang. All Rights Reserved.</p>
     </footer>
   );
 }

@@ -6,9 +6,9 @@ export default async function PinnedPosts() {
   const posts = await getPinnedPosts();
 
   return (
-    <section>
-      <h2 className='text-xl font-semibold flex items-center '>
-        <TiPin className='text-red-500 text-2xl' />
+    <section className='my-8'>
+      <h2 className='text-2xl font-semibold flex items-center my-2'>
+        <TiPin className='text-red-500 text-3xl mr-1' />
         Pinned Posts
       </h2>
       <PostsGrid posts={posts} />
