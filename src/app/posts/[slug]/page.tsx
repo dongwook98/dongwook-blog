@@ -1,4 +1,4 @@
-import { getPostData } from '@/app/service/posts';
+import { getAllPosts, getPostData } from '@/app/service/posts';
 import AdjacentPostCard from '@/components/AdjacentPostCard';
 import PostContent from '@/components/PostContent';
 import { Metadata } from 'next';
@@ -15,8 +15,8 @@ export async function generateMetadata({
   const { title, description } = await getPostData(slug);
 
   return {
-    title: `동욱의 블로그 | ${title}`,
-    description: `${description}`,
+    title,
+    description,
   };
 }
 
@@ -40,4 +40,11 @@ export default async function PostPage({ params: { slug } }: Props) {
       </section>
     </article>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    slug: post.path,
+  }));
 }
