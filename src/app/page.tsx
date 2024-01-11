@@ -6,9 +6,7 @@ export default function HomePage() {
   return (
     <>
       <Introduction />
-      {/* @ts-expect-error Async Server Component */}
       <PinnedPosts />
-      {/* @ts-expect-error Async Server Component */}
       <CarouselPosts />
     </>
   );
