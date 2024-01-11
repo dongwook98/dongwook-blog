@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <>
       <Introduction />
-      <section className='border shadow-lg mt-4 p-8 text-center'>
+      <section className='border shadow-md mt-4 p-8 text-center'>
         <h2 className={TITLE_CLASS}>자기 소개</h2>
         <p>
           안녕하세요. 저는 강동욱입니다.
