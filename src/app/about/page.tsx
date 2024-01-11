@@ -1,7 +1,14 @@
 import Introduction from '@/components/Introduction';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About me',
+  description: '동욱의 소개 글',
+};
 
 const TITLE_CLASS = 'text-2xl font-bold mt-6';
 const STRONG_CLASS = 'text-accent font-bold';
+
 export default function AboutPage() {
   return (
     <>

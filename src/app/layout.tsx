@@ -7,8 +7,14 @@ import { Open_Sans } from 'next/font/google';
 const openSans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '강동욱의 블로그',
-  description: '강동욱의 블로그 웹 사이트',
+  title: {
+    default: '동욱의 블로그',
+    template: '동욱의 블로그 | %s',
+  },
+  description: '프론트엔드 개발자 동욱의 블로그',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

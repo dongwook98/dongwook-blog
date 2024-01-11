@@ -1,5 +1,11 @@
 import ContactForm from '@/components/ContactForm';
+import { Metadata } from 'next';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+
+export const metadata: Metadata = {
+  title: 'Contact Me',
+  description: '동욱에게 메일 보내기',
+};
 
 const LINKS = [
   {
