@@ -1,10 +1,11 @@
 import path from 'path';
 import { readFile } from 'fs/promises';
+import { cache } from 'react';
 
 export type Post = {
   title: string;
   description: string;
-  date: string;
+  date: Date;
   category: string;
   path: string;
   featured: boolean;
@@ -16,11 +17,14 @@ export type PostData = Post & {
   prevPost: Post | null;
 };
 
-export async function getAllPosts(): Promise<Post[]> {
+export const getAllPosts = cache(async () => {
+  console.log('getAllPosts');
+
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
   return readFile(filePath, 'utf-8') //
-    .then((data) => JSON.parse(data));
-}
+    .then<Post[]>((data) => JSON.parse(data))
+    .then((posts) => posts.sort((a, b) => (a.date > b.date ? -1 : 1)));
+});
 
 export async function getPinnedPosts(): Promise<Post[]> {
   return getAllPosts() //
