@@ -26,6 +26,7 @@ export default function PostCard({
           <h3 className='text-lg font-bold w-full truncate text-center'>
             {title}
           </h3>
+          {/* 너비가 가득차야지 truncate 적용됨 */}
           <p className='w-full truncate text-center'>{description}</p>
           <span className='text-sm rounded-md bg-emerald-200 px-3 mt-2'>
             {category}
