@@ -4,7 +4,7 @@ import MyImage from '/public/images/me.png';
 
 export default function Introduction() {
   return (
-    <div className='flex justify-center items-center'>
+    <section className='flex justify-center items-center'>
       <div className='flex flex-col items-center self-end'>
         <p className='text-xl mb-1 text-center'>
           저의 블로그에 오신걸 환영합니다.
@@ -14,15 +14,17 @@ export default function Introduction() {
           href={'/contact'}
           className='bg-accent rounded-md p-2 text-white font-semibold hover:brightness-125'
         >
-          Contact
+          Contact Me
         </Link>
       </div>
       <Image
-        className='border-2 border-none rounded-2xl hover:bg-accent transition-all duration-500'
+        className='border border-white rounded-full hover:border-accent'
         src={MyImage}
-        alt='나의 사진'
+        alt='블로그 작가 동욱의 사진'
         width={200}
+        height={200}
+        priority // Next.js에게 가장 중요한 이미지 먼저 다운로드 받으라고 하게함
       />
-    </div>
+    </section>
   );
 }

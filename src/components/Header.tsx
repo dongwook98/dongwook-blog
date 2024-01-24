@@ -8,16 +8,16 @@ export default function Header() {
       </Link>
       <nav className='flex gap-4'>
         <Link className='hover:text-accent' href={'/'}>
-          home
+          Home
         </Link>
         <Link className='hover:text-accent' href={'/about'}>
-          about
+          About
         </Link>
         <Link className='hover:text-accent' href={'/posts'}>
-          posts
+          Posts
         </Link>
         <Link className='hover:text-accent' href={'/contact'}>
-          contact
+          Contact
         </Link>
       </nav>
     </header>
