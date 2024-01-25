@@ -18,7 +18,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
               showLineNumbers
               ref={null}
               {...rest}
-              className='text-lg !m-0 !px-0'
+              className='text-xl !m-0 !px-0'
               language={match[1]}
               style={oneDark}
               PreTag='div'
@@ -42,7 +42,7 @@ export default function MarkdownViewer({ content }: { content: string }) {
         ),
         pre({ children, className, ...props }) {
           return (
-            <pre {...props} className='bg-[#282C34] p-0'>
+            <pre {...props} className='bg-[#282C34] !p-1'>
               {children}
             </pre>
           );

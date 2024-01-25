@@ -14,6 +14,7 @@ export default function PostContent({ post }: { post: PostData }) {
       <h1 className='text-4xl font-bold'>{title}</h1>
       <p className='text-xl font-bold'>{description}</p>
       <div className='w-full border border-accent mt-4 mb-8'></div>
+      {/* 외부 라이브러리를 사용한다면 그 라이브러리를 한단계 추상화해주는 컴포넌트로 만들기  */}
       <MarkdownViewer content={content} />
     </section>
   );

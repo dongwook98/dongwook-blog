@@ -36,7 +36,7 @@ export default function ContactPage() {
           </a>
         ))}
       </ul>
-      <h2 className='text-3xl font-bold my-8'>
+      <h2 className='text-3xl font-bold mt-8'>
         또는 아래에 메일을 보내주세요.
       </h2>
       <ContactForm />

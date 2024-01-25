@@ -56,7 +56,7 @@ export default function ContactForm() {
         className='w-full flex flex-col gap-2 my-4 p-4 border rounded-xl '
       >
         <label htmlFor='from' className='font-semibold'>
-          여러분의 이메일을 적어주세요.
+          여러분의 이메일
         </label>
         <input
           type='email'

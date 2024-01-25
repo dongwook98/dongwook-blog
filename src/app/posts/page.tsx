@@ -11,5 +11,8 @@ export default async function PostsPage() {
   const posts = await getAllPosts();
   const categories = [...new Set(posts.map((post) => post.category))];
 
-  return <FilterablePosts posts={posts} categories={categories} />;
+  return (
+    // 상태와 이벤트 처리를 위해 컴포넌트 분리
+    <FilterablePosts posts={posts} categories={categories} />
+  );
 }

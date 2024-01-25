@@ -2,6 +2,7 @@ import { getAllPosts, getPostData } from '@/app/service/posts';
 import AdjacentPostCard from '@/components/AdjacentPostCard';
 import PostContent from '@/components/PostContent';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 type Props = {
   params: {
@@ -22,7 +23,7 @@ export async function generateMetadata({
 
 export default async function PostPage({ params: { slug } }: Props) {
   const post = await getPostData(slug);
-  const { nextPost, prevPost } = post;
+  const { prevPost, nextPost } = post;
 
   return (
     <article className='rounded-2xl overflow-hidden border shadow-lg my-4'>

@@ -6,7 +6,7 @@ export default function Header() {
       <Link href={'/'}>
         <h1 className='text-3xl font-bold hover:text-accent'>동욱의 블로그</h1>
       </Link>
-      <nav className='flex gap-4'>
+      <nav className='flex gap-6 text-xl'>
         <Link className='hover:text-accent' href={'/'}>
           Home
         </Link>
